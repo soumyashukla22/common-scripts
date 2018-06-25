@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+if [ -z "$1" ]
+then
+    echo "Command cannot be null"
+    exit 1
+fi
+
+echo "Getting results for $1 at $2.tsv"
+hive -e "set hive.cli.print.header=true; $1" 2>> "$2".log 1> "$2".tsv
+status=$?
+if [ ${status} -eq 0 ]; then
+    echo scopy `hostname -i`:$2.tsv >> "$2".log
+    echo scopy `hostname -i`:$2.tsv | mail -s "Hive Query Successful" "sshukla@walmartlabs.com"
+fi
+echo "HIVE RUN SUCCEEDED" >> "$2".log
