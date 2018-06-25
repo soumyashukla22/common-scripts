@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+if [ -z "$1" ]
+then
+    echo "Command cannot be null"
+    exit 1
+fi
+
+FILENAME="`pwd`/$2"
+echo '' > "$FILENAME.log"
+if [ -n "$2" ]
+then
+    nohup hive_wrapper "$1" "$FILENAME" >> "$FILENAME.log" & sleep 5 & tail -f "$FILENAME.log"
+else
+    echo "Printing here"
+    hive -e "$1"
+fi
