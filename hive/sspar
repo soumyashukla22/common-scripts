@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+OPT=$2
+if [ -z "$OPT" ]
+then
+  hive -e "show partitions $1" | cut -d'=' -f2 | sort | tail -1
+else
+  hive -e "show partitions $1"
+fi
