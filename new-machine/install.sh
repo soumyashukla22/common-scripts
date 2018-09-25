@@ -12,9 +12,11 @@ brew cask install skype
 brew cask install slack
 brew cask install sublime-text
 brew cask install webstorm
-brew cask install pycharm
+brew cask install pycharm-ce
 brew cask install notion
+brew cask install google-backup-and-sync
 brew cask install eclipse-java
+brew cask install eclipse-jee
 
 brew install maven //available in external folder
 brew install sbt
