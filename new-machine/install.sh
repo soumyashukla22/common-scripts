@@ -11,12 +11,17 @@ brew cask install evernote
 brew cask install skype
 brew cask install slack
 brew cask install sublime-text
+brew cask install webstorm
+brew cask install pycharm
+brew cask install notion
+brew cask install eclipse-java
 
 brew install maven //available in external folder
 brew install sbt
 
 #python packages
 sudo easy_install pip
-pip install airflow
-
+sudo pip install airflow
+sudo pip install requests
+sudo pip install pymysql
 
