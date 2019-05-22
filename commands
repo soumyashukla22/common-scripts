@@ -1,0 +1,6 @@
+# get all file size in MB
+# filter the ones greater than 100MB(1GB)
+# sort 
+# get top 10
+
+du -m *| awk '$1 > 1000'| sort -nr | head -10
